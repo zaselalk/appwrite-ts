@@ -4,7 +4,6 @@ import { Models } from 'appwrite';
 
 const App = () => {
   const [loggedInUser, setLoggedInUser] = useState<Models.User<Models.Preferences>| null>(null);
-  // const [loggedInUser, setLoggedInUser] = useState<User<Preferences> | null>(null);
 
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
