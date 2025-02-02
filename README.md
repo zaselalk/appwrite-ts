@@ -1,50 +1,74 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + Appwrite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get React working in Vite with Appwrite, TypeScript, HMR, and some ESLint rules.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Follow these steps to initialize and run the project:
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Make sure you have the following installed:
 
-- Configure the top-level `parserOptions` property like this:
+- [Node.js](https://nodejs.org/) (version 14 or higher)
+- [npm](https://www.npmjs.com/) (version 6 or higher)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone <repository-url>
+   cd <repository-directory>
+   ```
+
+2. Install the dependencies:
+
+   ```sh
+   npm install
+   ```
+
+### Setting Up Appwrite
+
+1. Create an account on [Appwrite](https://appwrite.io/).
+2. Create a new project in the Appwrite console.
+3. Note the Project ID from the Appwrite console.
+4. Create a `.env` file in the root of your project and add the following line, replacing `YOUR_PROJECT_ID` with your actual Project ID:
+
+   ```properties
+   VITE_APPWRITE_PROJECT_ID=YOUR_PROJECT_ID
+   ```
+
+### Running the Development Server
+
+To start the development server, run:
+
+```sh
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+This will start the Vite development server and you can view the application in your browser at `http://localhost:3000`.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Building for Production
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+To build the project for production, run:
+
+```sh
+npm run build
 ```
+
+The production-ready files will be generated in the `dist` directory.
+
+### Previewing the Production Build
+
+To preview the production build, run:
+
+```sh
+npm run preview
+```
+
+This will start a local server to serve the production build.
+
+## License
+
+This project is licensed under the MIT License.
